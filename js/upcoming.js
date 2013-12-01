@@ -1,19 +1,16 @@
 
 $(function() {
 
-    $('button').click(function() {
-
-        var url = 'http://api.themoviedb.org/3/';
-        var mode = 'movie/upcoming'
-        var key = '?api_key=470fd2ec8853e25d2f8d86f685d2270e';
-        $.ajax({
-            url: url + mode + key,
-            dataType: 'jsonp',
-            success: function(data) {
-                parseResults(data);
-            }
-        }); //ajax
-    });//click
+    var url = 'http://api.themoviedb.org/3/';
+    var mode = 'movie/upcoming'
+    var key = '?api_key=470fd2ec8853e25d2f8d86f685d2270e';
+    $.ajax({
+        url: url + mode + key,
+        dataType: 'jsonp',
+        success: function(data) {
+            parseResults(data);
+        }
+    }); //ajax
 });
 
 function parseResults(data) {

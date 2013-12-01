@@ -1,20 +1,17 @@
 
 $(function() {
 
-    $('button').click(function() {
+    var url = 'http://api.themoviedb.org/3/';
+    var mode = 'movie/now_playing'
+    var key = '?api_key=470fd2ec8853e25d2f8d86f685d2270e';
 
-        var url = 'http://api.themoviedb.org/3/';
-        var mode = 'movie/now_playing'
-        var key = '?api_key=470fd2ec8853e25d2f8d86f685d2270e';
-
-        $.ajax({
-            url: url + mode + key,
-            dataType: 'jsonp',
-            success: function(data) {
-                parseResults(data);
-            }
-        }); //ajax
-    });//click
+    $.ajax({
+        url: url + mode + key,
+        dataType: 'jsonp',
+        success: function(data) {
+            parseResults(data);
+        }
+    }); //ajax
 });
 
 function parseResults(data) {

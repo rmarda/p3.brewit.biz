@@ -23,13 +23,6 @@
         </ul>
     </nav>
     <section id='feature_area'>
-        <article id='search_movie'>
-            <div class='inner'>
-                <h1>Search movie</h1>
-                <input id='movie_input' type='text'/>
-                <button>Search</button>
-            </div>
-        </article>
         <article id='search_results'>
             <div class='inner'>
 
