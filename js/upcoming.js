@@ -15,8 +15,9 @@ $(function() {
 
 function parseResults(data) {
 
-    //var val = data instanceof jQuery;
-    alert(JSON.stringify(data));
+    var results = JSON.stringify(data);
+    $('#search_results .inner').html('Displaying results' + results);
+
 
     /*var titles = '';
      for(var i = 0; i <data.results.length; i++)
