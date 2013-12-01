@@ -33,6 +33,7 @@
         <p>Movie API from <a href="https://www.themoviedb.org/"> MovieDB</a></p>
     </footer>
 </div> <!-- end wrapper -->
+<script src="js/movieConfig.js"></script>
 <script src="js/now.js"></script>
 </body>
 </html>

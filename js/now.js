@@ -16,15 +16,17 @@ $(function() {
 
 function parseResults(data) {
 
-    var results = JSON.stringify(data);
-    $('#search_results .inner').html('Displaying results' + results);
-
-
-    /*var titles = '';
-     for(var i = 0; i <data.results.length; i++)
-     titles = titles + ' ' + data.results[i].original_title;
-     alert(titles);*/
-
-
+    var base_url = window.configData.images['base_url'];
+    var image_size = window.configData.images['poster_sizes'][1];
+    var url = base_url + image_size;
+    //$('#search_results .inner').html('Displaying results' + results);
+    $('#search_results .inner ').css('list-style-type', 'none');
+    $('#search_results .inner').append('<ul>');
+    for(var i = 0; i<data.results.length; i++) {
+        var movie_name = data.results[i].original_title;
+        $('#search_results .inner').append('<li><img src="' + url + data.results[i].poster_path+ '" /> </li>');
+        $('#search_results .inner').append(movie_name);
+    }
+    $('#search_results .inner').append('</ul>');
 
 }
