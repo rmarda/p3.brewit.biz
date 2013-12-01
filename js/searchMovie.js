@@ -4,15 +4,13 @@ $(function() {
     $('button').click(function() {
 
         var url = 'http://api.themoviedb.org/3/';
-        //var url = 'http://private-c1c1-themoviedb.apiary.io/3/'
-        //var mode = 'search/movie';
-        var mode = 'movie/now_playing'
+        var mode = 'search/movie';
         var key = '?api_key=470fd2ec8853e25d2f8d86f685d2270e';
-        //var input = $('#movie').val();
-        //var movieName = encodeURI(input);
+        var input = $('#movie_input').val();
+        var movieName = encodeURI(input);
 
         $.ajax({
-            url: url + mode + key /*+ '&query='+movieName + '&callback'*/,
+            url: url + mode + key + '&query='+movieName,
             dataType: 'jsonp',
             success: function(data) {
                 parseResults(data);
@@ -23,7 +21,6 @@ $(function() {
 
 function parseResults(data) {
 
-    //var val = data instanceof jQuery;
     alert(JSON.stringify(data));
 
     /*var titles = '';
