@@ -24,6 +24,7 @@ function parseResults(data) {
     var base_url = window.configData.images['base_url'];
     var image_size = window.configData.images['poster_sizes'][1];
     var url = base_url + image_size;
+    $('#search_results .inner').empty();
     //$('#search_results .inner').html('Displaying results' + results);
     $('#search_results .inner ').css('list-style-type', 'none');
     $('#search_results .inner').append('<ul>');
