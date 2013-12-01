@@ -23,7 +23,7 @@
     <section id='feature_area'>
         <article id='search'>
             <div class='inner'>
-                <h1>Search a movie</h1>
+                <h1>Search movie</h1>
                 <input id='movie' type='text' />
                 <button>Search</button>
             </div> <!-- end inner div -->

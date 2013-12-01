@@ -19,7 +19,7 @@ header{
     padding:1px;
     border-bottom:1px grey solid;
 }
-#pageTitle{
+#page_title{
     text-align:center;
 }
 
@@ -63,7 +63,7 @@ section#feature_area{
     margin:16px 0 0;
     padding:0 0 10px;
 }
-section#feature_area article#search{
+section#feature_area article#search_movie{
     width:100%;
 }
 section#feature_area article .inner{
