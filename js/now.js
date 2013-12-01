@@ -24,8 +24,19 @@ function parseResults(data) {
     $('#search_results .inner').append('<ul>');
     for(var i = 0; i<data.results.length; i++) {
         var movie_name = data.results[i].original_title;
-        $('#search_results .inner').append('<li><img src="' + url + data.results[i].poster_path+ '" /> </li>');
+        var image_path = data.results[i].poster_path;
+        var release_date = data.results[i].release_date;
+        var vote_average = data.results[i].vote_average;
+        var vote_count = data.results[i].vote_count;
+
+        $('#search_results .inner').append('<li><img src="' + url + image_path + '" /> </li>');
         $('#search_results .inner').append(movie_name);
+        $('#search_results .inner').append('<br>');
+        $('#search_results .inner').append('Release Date: '+release_date);
+        $('#search_results .inner').append('<br>');
+        $('#search_results .inner').append('Avg. Rating: '+ vote_average);
+        $('#search_results .inner').append('<br>');
+        $('#search_results .inner').append('Total no. of votes: '+vote_count);
     }
     $('#search_results .inner').append('</ul>');
 
