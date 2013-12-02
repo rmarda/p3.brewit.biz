@@ -13,13 +13,20 @@
 /*header*/
 header{
     position:relative;
-    height:70px;
+    height:140px;
     margin:10px 0;
     background:#fff;
     padding:1px;
     border-bottom:1px grey solid;
 }
 
+header img#logo{
+    position:absolute;
+    width:125px;
+    height:125px;
+    left:0px;
+    top:0px;
+}
 header #page_title{
     text-align:center;
 }
