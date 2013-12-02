@@ -22,25 +22,20 @@
                 <li><a href ="upcoming.php">Upcoming</a></li>
             </ul>
         </nav>
-        <section id='feature_area'>
+        <section id='search_section'>
             <article id='search_movie'>
-                <div class='inner'>
-                    <h1>Search movie</h1>
-                    <input id='movie_input' type='text'/>
-                    <button>Search</button>
-                </div>
+                <h1>Search movie</h1>
+                <input id='movie_input' type='text'/>
+                <button>Search</button>
             </article>
-            <article id='search_results'>
-                <div class='inner'>
-
-                </div>
-            </article>
+        </section>
+        <section id='feature_area'>
         </section>
         <footer>
             <p>Movie API from <a href="https://www.themoviedb.org/"> MovieDB</a></p>
         </footer>
     </div> <!-- end wrapper -->
-    <script src="js/movieConfig.js"></script>
-    <script src="js/searchMovie.js"></script>
+    <script src="js/fetchDataFromExternal.js"></script>
+    <script src="js/search.js"></script>
     </body>
 </html>

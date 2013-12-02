@@ -19,7 +19,8 @@ header{
     padding:1px;
     border-bottom:1px grey solid;
 }
-#page_title{
+
+header #page_title{
     text-align:center;
 }
 
@@ -33,7 +34,6 @@ header{
 }
 .menu ul{
     overflow:hidden; /*forces ul to enclose floated li elements*/
-
 }
 
 .menu li{
@@ -56,20 +56,18 @@ header{
     color:#555;
 }
 
-/*search page section*/
+/*feature area section*/
 
-section#feature_area{
+section{
     overflow:hidden;
     margin:16px 0 0;
     padding:0 0 10px;
 }
-section#feature_area article#search_movie{
-    width:100%;
-}
-section#feature_area article .inner{
+
+/*only on index page for searching movie*/
+section#search_section article{
     padding:12px;
     background:#fff;
-
 }
 
 /*footer*/
