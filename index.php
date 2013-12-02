@@ -23,10 +23,11 @@
             </ul>
         </nav>
         <section id='search_section'>
-            <article id='search_movie'>
-                <h1>Search movie</h1>
-                <input id='movie_input' type='text'/>
-                <button>Search</button>
+            <article id='search_article'>
+                <div>
+                    <input type="text" id='movie_input' class="search">
+                    <input type="button" id='movie_search_btn' value="Search">
+                </div>
             </article>
         </section>
         <section id='feature_area'>
