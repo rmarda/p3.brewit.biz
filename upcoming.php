@@ -26,7 +26,7 @@
     <section id='feature_area'>
     </section>
     <footer>
-        <p>Movie API from <a href="https://www.themoviedb.org/"> MovieDB</a></p>
+        <p>Movie API from <a href="https://www.themoviedb.org/"> MovieDB.</a> Logo taken from <a href="http://www.logoinstant.com/"> LogoInstant</a></p>
     </footer>
 </div> <!-- end wrapper -->
 <script src="js/fetchDataFromExternal.js"></script>
