@@ -14,6 +14,7 @@ function fetchDataFromExternal(mode, query) {
 
     $.ajax({
         url: url + mode + key + query,
+        async:false,
         dataType: 'jsonp',
         success: function(data) {
             parseResults(data);
@@ -51,21 +52,23 @@ function parseResults(data) {
         $('article#errorMsg').html('We didn\'t find any results matching your query.');
         return;
     }
+    var base_url = 'http://d3gtl9l2a4fn1j.cloudfront.net/t/p/';
+    var image_size = 'w154';
+    if(!testEmpty(window.configData)){
+        base_url = window.configData.images['base_url'];
+        image_size = window.configData.images['poster_sizes'][1];
+    }
 
-    var base_url = window.configData.images['base_url'];
-    var image_size = window.configData.images['poster_sizes'][1];
     var url = base_url + image_size;
-    // clear out the page
+    // clear out the results area
     $('section#feature_area').empty();
 
-    //$('section#feature_area ').css('list-style-type', 'none');
-    //$('section#feature_area').append('<ul>');
     for(var i = 0; i<data.results.length; i++) {
 
         var image = data.results[i].poster_path;
         var image_path = '';
         if(image == null){
-            continue; /* TODO: add a place holder image instead of continuing */
+            continue; /* add a place holder image instead of continuing */
         }
         else{
             image_path = url + data.results[i].poster_path;
@@ -76,14 +79,17 @@ function parseResults(data) {
         var vote_count = data.results[i].vote_count;
         $('section#feature_area').append("<article class='movieItem'></article>");
         $('section#feature_area article.movieItem').css('padding', 10);
+        $('section#feature_area article.movieItem').css('width', '100%');
         $('section#feature_area article.movieItem').append('<img src="' + image_path + '" />');
+        $('section#feature_area article.movieItem p').css('margin', 0);
         $('section#feature_area article.movieItem').append('<p>' + movie_name+ '</p>');
         $('section#feature_area article.movieItem').append('<p>Release Date: '+release_date+'</p>');
         $('section#feature_area article.movieItem').append('<p>Avg. Rating: '+ vote_average + '</p>');
         $('section#feature_area article.movieItem').append('<p>Total no. of votes: '+vote_count+'</p>');
-    }
-    //$('#search_results .inner').append('</ul>');
+        $('section#feature_area article.movieItem div.clearMe').css('clear', 'left');
+        $('section#feature_area article.movieItem').append("<div class ='clearMe'></div>");
 
+    }
 
 }
 
