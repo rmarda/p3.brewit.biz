@@ -49,7 +49,7 @@ function parseResults(data) {
         $('section#feature_area').empty();
         $('section#feature_area').append("<article id='errorMsg'></article>");
         $('article#errorMsg').css('padding', '12px');
-        $('article#errorMsg').html('We didn\'t find any results matching your query.');
+        $('article#errorMsg').html('Sorry, we didn\'t find any results matching your query.');
         return;
     }
 
