@@ -53,7 +53,7 @@ function parseResults(data) {
         return;
     }
 
-    if(data.results.length >6){
+    if(data.results.length >2){
         //show back to top
         $('div#top a').css('visibility', 'visible');
     }
@@ -72,7 +72,9 @@ function parseResults(data) {
     for(var i = 0; i<data.results.length; i++) {
 
         var image = data.results[i].poster_path;
-        var image_path = url + data.results[i].poster_path;
+        var image_path = url + image;
+        if(image == null)
+            image_path = 'images/no-poster-w92.jpg';
         var movie_name = data.results[i].original_title;
         var release_date = data.results[i].release_date;
         var vote_average = data.results[i].vote_average;
