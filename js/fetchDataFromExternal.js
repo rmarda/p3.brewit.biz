@@ -52,6 +52,11 @@ function parseResults(data) {
         $('article#errorMsg').html('We didn\'t find any results matching your query.');
         return;
     }
+
+    if(data.results.length >6){
+        //show back to top
+        $('div#top a').css('visibility', 'visible');
+    }
     var base_url = 'http://d3gtl9l2a4fn1j.cloudfront.net/t/p/';
     var image_size = 'w154';
     if(!testEmpty(window.configData)){
@@ -60,35 +65,26 @@ function parseResults(data) {
     }
 
     var url = base_url + image_size;
+
     // clear out the results area
     $('section#feature_area').empty();
 
     for(var i = 0; i<data.results.length; i++) {
 
         var image = data.results[i].poster_path;
-        var image_path = '';
-        if(image == null){
-            continue; /* add a place holder image instead of continuing */
-        }
-        else{
-            image_path = url + data.results[i].poster_path;
-        }
+        var image_path = url + data.results[i].poster_path;
         var movie_name = data.results[i].original_title;
         var release_date = data.results[i].release_date;
         var vote_average = data.results[i].vote_average;
         var vote_count = data.results[i].vote_count;
-        $('section#feature_area').append("<article class='movieItem'></article>");
-        $('section#feature_area article.movieItem').css('padding', 10);
-        $('section#feature_area article.movieItem').css('width', '100%');
-        $('section#feature_area article.movieItem').append('<img src="' + image_path + '" />');
-        $('section#feature_area article.movieItem p').css('margin', 0);
-        $('section#feature_area article.movieItem').append('<p>' + movie_name+ '</p>');
-        $('section#feature_area article.movieItem').append('<p>Release Date: '+release_date+'</p>');
-        $('section#feature_area article.movieItem').append('<p>Avg. Rating: '+ vote_average + '</p>');
-        $('section#feature_area article.movieItem').append('<p>Total no. of votes: '+vote_count+'</p>');
-        $('section#feature_area article.movieItem div.clearMe').css('clear', 'left');
-        $('section#feature_area article.movieItem').append("<div class ='clearMe'></div>");
-
+        $('section#feature_area ').css('padding', 10);
+        $('section#feature_area ').css('width', '100%');
+        $('section#feature_area ').append('<img src="' + image_path + '" />');
+        $('section#feature_area  p').css('margin', 0);
+        $('section#feature_area ').append('<p>' + movie_name+ '</p>');
+        $('section#feature_area ').append('<p>Release Date: '+release_date+'</p>');
+        $('section#feature_area ').append('<p>Avg. Rating: '+ vote_average + '</p>');
+        $('section#feature_area ').append('<p>Total no. of votes: '+vote_count+'</p>');
     }
 
 }
