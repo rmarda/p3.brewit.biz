@@ -25,7 +25,8 @@ $(function() {
 function searchMovie() {
     var modeStr = 'search/movie';
     var input = $('#movie_input').val();
+    window.currentSearch = input;
     var movieName = encodeURI(input);
     var queryStr = '&query='+ movieName;
-    fetchDataFromExternal(modeStr, queryStr);
+    fetchDataFromExternal(modeStr, queryStr, null);
 }

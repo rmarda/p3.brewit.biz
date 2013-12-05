@@ -1,5 +1,5 @@
 
-function fetchDataFromExternal(mode, query) {
+function fetchDataFromExternal(mode, query, page) {
 
     var url = 'http://api.themoviedb.org/3/';
     var key = '?api_key=470fd2ec8853e25d2f8d86f685d2270e';
@@ -12,14 +12,21 @@ function fetchDataFromExternal(mode, query) {
         query = '';
     }
 
+    if(testEmpty(page)){
+        page = '';
+    }
+
+    window.currentQuery = query;
+    window.currentMode = mode;
+
     $.ajax({
-        url: url + mode + key + query,
+        url: url + mode + key + query + page,
         async:false,
         dataType: 'jsonp',
         success: function(data) {
             parseResults(data);
         }
-    }); //ajax
+    });
 
 }
 
@@ -58,38 +65,76 @@ function parseResults(data) {
         $('div#top a').css('visibility', 'visible');
     }
     var base_url = 'http://d3gtl9l2a4fn1j.cloudfront.net/t/p/';
-    var image_size = 'w154';
+    var image_size = 'w92';
     if(!testEmpty(window.configData)){
         base_url = window.configData.images['base_url'];
-        image_size = window.configData.images['poster_sizes'][1];
+        image_size = window.configData.images['poster_sizes'][0];
     }
 
     var url = base_url + image_size;
 
     // clear out the results area
     $('section#feature_area').empty();
-
     for(var i = 0; i<data.results.length; i++) {
 
         var image = data.results[i].poster_path;
         var image_path = url + image;
-        if(image == null)
+        if(image == null){
             image_path = 'images/no-poster-w92.jpg';
+        }
         var movie_name = data.results[i].original_title;
         var release_date = data.results[i].release_date;
         var vote_average = data.results[i].vote_average;
         var vote_count = data.results[i].vote_count;
-        $('section#feature_area ').css('padding', 10);
-        $('section#feature_area ').css('width', '100%');
-        $('section#feature_area ').append('<img src="' + image_path + '" />');
-        $('section#feature_area  p').css('margin', 0);
-        $('section#feature_area ').append('<p>' + movie_name+ '</p>');
-        $('section#feature_area ').append('<p>Release Date: '+release_date+'</p>');
-        $('section#feature_area ').append('<p>Avg. Rating: '+ vote_average + '</p>');
-        $('section#feature_area ').append('<p>Total no. of votes: '+vote_count+'</p>');
+
+        var imgstr = '<img src="' + image_path + '" class="movieImageStyle" />';
+
+        var infostr = '<p>' + movie_name+ '</p>' +
+                      '<p>Release Date: '+release_date+'</p>' +
+                      '<p>Avg. Rating: '+ vote_average + '</p>' +
+                      '<p>Avg. Rating: '+ vote_average + '</p>' +
+                      '<p>Total no. of votes: '+vote_count+'</p>';
+
+        var datastr = '<div class="clearfix movieInfoStyle">'+infostr+'</div>';
+
+        var articlestr = "<article class='clearfix movieArticleStyle box shadow_effect'>"+imgstr+ datastr+ "</article>";
+        $('section#feature_area ').append(articlestr);
+    }
+    $('section.page_number_info').css('visibility', 'visible');
+    window.currentPage = data.page;
+    var pages = data.total_pages;
+    $('section.page_number_info').html('<span>Displaying results for: ' + window.currentSearch + '</span> ');
+    $('section.page_number_info').append('<span>Page: ' + window.currentPage + 'of '+ pages+'</span> ');
+    if(currentPage>1){
+        $('section.page_number_info').append('<a class="previous_page" href="#">previous </a> ||');
+    }
+    else{
+        $('section.page_number_info').append('previous ||');
     }
 
+    if(currentPage< data.total_pages)
+    {
+        $('section.page_number_info').append('<a class="next_page" href="#">next </a> ');
+    }
+    else {
+        $('section.page_number_info').append('next');
+    }
 }
+
+$(document).on("click",".previous_page", function (event) {
+    event.preventDefault();
+    var pageNum = window.currentPage - 1;
+    var pageQuery = '&page='+ pageNum;
+    fetchDataFromExternal(window.currentMode, window.currentQuery + pageQuery);
+
+});
+
+$(document).on("click",".next_page", function (event) {
+    event.preventDefault();
+    var pageNum = window.currentPage + 1;
+    var pageQuery = '&page='+ pageNum;
+    fetchDataFromExternal(window.currentMode, window.currentQuery + pageQuery);
+});
 
 function testEmpty(data){
 

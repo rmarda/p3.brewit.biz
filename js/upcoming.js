@@ -1,4 +1,5 @@
 $(document).ready(function() {
     var modeStr = 'movie/upcoming';
-    fetchDataFromExternal(modeStr, null);
+    window.currentSearch = 'Upcoming Movies ';
+    fetchDataFromExternal(modeStr);
 });

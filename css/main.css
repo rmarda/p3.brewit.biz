@@ -71,14 +71,87 @@ header #page_title{
 
 section{
     overflow:hidden;
-    margin:20px 0 0;
+    width:100%;
+}
+section#search_section{
+    padding:50px;
 }
 
 article#search_article{
-    margin:0 auto;
     position:relative;
-    padding:15px;
     text-align:center;
+}
+
+.movieImageStyle{
+    float:left;
+}
+
+.movieInfoStyle{
+    text-align: center;
+}
+
+.movieArticleStyle{
+    float:left;
+    width:100%;
+    padding:20px;
+    text-align: center;
+}
+
+.box h3{
+    text-align:center;
+    position:relative;
+    top:80px;
+}
+.box {
+
+    width:70%;
+    height:200px;
+    background:#FFF;
+    margin:20px auto;
+    position:absolute;
+    left:13%;
+
+}
+
+.shadow_effect
+{
+    position:relative;
+    -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+.shadow_effect:before, .shadow_effect:after
+{
+    content:"";
+    position:absolute;
+    z-index:-1;
+    -webkit-box-shadow:0 0 20px rgba(0,0,0,0.8);
+    -moz-box-shadow:0 0 20px rgba(0,0,0,0.8);
+    box-shadow:0 0 20px rgba(0,0,0,0.8);
+    top:0;
+    bottom:0;
+    left:10px;
+    right:10px;
+    -moz-border-radius:100px / 10px;
+    border-radius:100px / 10px;
+}
+.shadow_effect:after
+{
+    right:10px;
+    left:auto;
+    -webkit-transform:skew(8deg) rotate(3deg);
+    -moz-transform:skew(8deg) rotate(3deg);
+    -ms-transform:skew(8deg) rotate(3deg);
+    -o-transform:skew(8deg) rotate(3deg);
+    transform:skew(8deg) rotate(3deg);
+}
+
+.clearfix:after{
+    content:".";
+    display:block;
+    height:0;
+    visibility:hidden;
+    clear:both;
 }
 
 /*Input Text and Button*/
@@ -155,6 +228,14 @@ div#top a{
     visibility: hidden;
 }
 
+.page_number_info{
+
+    height: 20px;
+    padding-bottom: 10px;
+    text-align: center;
+    visibility: hidden;
+}
+
 /*footer*/
 footer{
     font-size:.75em;
@@ -163,3 +244,4 @@ footer{
     background:#fff;
     border-top: grey 1px solid;
 }
+

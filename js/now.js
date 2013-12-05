@@ -1,5 +1,5 @@
 $(document).ready(function() {
-
     var modeStr = "movie/now_playing";
-    fetchDataFromExternal(modeStr, null);
+    window.currentSearch = 'Movies Playing Now in Theaters ';
+    fetchDataFromExternal(modeStr);
 });
