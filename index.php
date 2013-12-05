@@ -18,7 +18,7 @@
             </div>
         </section>
         <header>
-            <a href='index.php'><img id ='logo' src='images/movie_monkey.jpg' width='125px' height='125px'/></a>
+            <a href='index.php'><img id ='logo' src='images/movie_monkey.jpg' alt='movie_monkey_logo' width='125' height='125'/></a>
             <h1 id='page_title'>Movie Monkey</h1>
         </header>
         <nav class='menu'>
