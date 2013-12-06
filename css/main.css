@@ -4,7 +4,7 @@
 }
 
 body {
-    font-family: "Lucida Grande", Verdana, Arial, sans-serif;
+    font-family: 'Josefin Sans', Helvetica, Arial, sans-serif;
 }
 
 #wrapper {
@@ -42,6 +42,7 @@ header #page_title{
     padding:1px;
     padding-bottom: 10px;
     border-bottom:1px grey solid;
+    font-size:20px;
 }
 .menu ul{
     overflow:hidden; /*forces ul to enclose floated li elements*/
@@ -67,12 +68,38 @@ header #page_title{
     color:#555;
 }
 
+/*home page*/
+
+h1{
+    font-size:60px;
+    line-height:96px;
+    margin:4px 0 -4px;
+    text-align:center;
+    font-weight:normal;
+    position:relative;
+    font-family: 'Dancing Script', Georgia, Times, serif;
+}
+
+h2{
+    font-size:30px; line-height:66px; margin:4px 0 -4px; text-align:left; font-weight:normal;position:relative;
+    font-family: 'Dancing Script', Georgia, Times, serif;
+
+}
+
+p {
+    font-family: 'Josefin Sans', Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    line-height: 25px;
+    margin-top: 15px;
+}
+
 /* search and feature sections*/
 
 section{
     overflow:hidden;
     width:100%;
 }
+
 section#search_section{
     padding:50px;
 }
@@ -88,6 +115,12 @@ article#search_article{
 
 .movieInfoStyle{
     text-align: center;
+}
+
+.movieInfoStyle p{
+    margin:0px;
+    padding:0px;
+    line-height: 25px;
 }
 
 .movieArticleStyle{
@@ -224,7 +257,6 @@ div#top a{
     text-decoration: none;
     text-align: center;
     vertical-align:middle;
-    font: bold 11px "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
     visibility: hidden;
 }
 
@@ -244,4 +276,3 @@ footer{
     background:#fff;
     border-top: grey 1px solid;
 }
-

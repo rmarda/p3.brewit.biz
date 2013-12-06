@@ -107,7 +107,7 @@ function parseResults(data) {
         var vote_average = data.results[i].vote_average;
         var vote_count = data.results[i].vote_count;
 
-        var imgstr = '<img src="' + image_path + '" class="movieImageStyle" />';
+        var imgstr = '<img src="' + image_path + '" class=" clearfix movieImageStyle" />';
 
         var infostr = '<p>' + movie_name+ '</p>' +
                       '<p>Release Date: '+release_date+'</p>' +
