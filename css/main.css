@@ -31,6 +31,14 @@ header img#logo{
     left:0px;
     top:0px;
 }
+
+a img{
+    border:0;
+    display:block;
+}
+
+
+
 header #page_title{
     text-align:center;
 }
@@ -86,11 +94,24 @@ h2{
 
 }
 
-p {
-    font-family: 'Josefin Sans', Helvetica, Arial, sans-serif;
-    font-size: 18px;
-    line-height: 25px;
-    margin-top: 15px;
+article#home_page_text{
+    padding:30px;
+    text-align: left;
+
+}
+
+p strong.menu_item{
+    font-weight:900;
+    color:#63a62f;
+}
+
+p strong.limitations{
+    font-weight:900;
+    color:maroon;
+}
+
+article#home_page_text a{
+    text-decoration: none;
 }
 
 /* search and feature sections*/
@@ -98,6 +119,14 @@ p {
 section{
     overflow:hidden;
     width:100%;
+}
+
+
+section#feature_area p {
+    font-family: 'Josefin Sans', Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    line-height: 25px;
+    margin-top: 15px;
 }
 
 section#search_section{
@@ -251,7 +280,7 @@ div#top a{
     bottom:30px;
     right:30px;
     width:110px;
-    height:15px;
+    height:20px;
     background-color: rgba(94, 158, 46, 1);
     color:#fff;
     text-decoration: none;
@@ -271,7 +300,8 @@ div#top a{
 /*footer*/
 footer{
     font-size:.75em;
-    padding:.5em 0 .35em 0;
+    padding-top:5px;
+    padding-bottom:5px;
     text-align: center;
     background:#fff;
     border-top: grey 1px solid;
