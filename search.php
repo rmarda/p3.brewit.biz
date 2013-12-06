@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="css/main.css" type="text/css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
-
 </head>
 
 <body>
@@ -19,7 +18,7 @@
         </div>
     </section>
     <header>
-        <a href='index.php'><img id ='logo' src='images/movie_monkey.jpg' width='125px' height='125px'/></a>
+        <a href='index.php'><img id ='logo' src='images/movie_monkey.jpg' alt='movie_monkey_logo' width='125' height='125'/></a>
         <h1 id='page_title'>Movie Monkey</h1>
     </header>
     <nav class='menu'>
@@ -30,6 +29,14 @@
             <li><a href ="upcoming.php">Upcoming</a></li>
         </ul>
     </nav>
+    <section id='search_section'>
+        <article id='search_article'>
+            <div>
+                <input type="text" id='movie_input' class="search" placeholder="lookup a movie..." maxlength="30" size='40'>
+                <input type="button" id='movie_search_btn' value="Search">
+            </div>
+        </article>
+    </section>
     <section class='page_number_info'>
     </section>
     <section id='feature_area'>
@@ -41,6 +48,6 @@
     </footer>
 </div> <!-- end wrapper -->
 <script src="js/fetchDataFromExternal.js"></script>
-<script src="js/upcoming.js"></script>
+<script src="js/search.js"></script>
 </body>
 </html>

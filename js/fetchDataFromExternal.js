@@ -25,6 +25,25 @@ function fetchDataFromExternal(mode, query, page) {
         dataType: 'jsonp',
         success: function(data) {
             parseResults(data);
+        },
+        statusCode: {
+            503: function() {
+                alert( "Sorry, you have exceed the no. of search limit. Please see the home page for more details." );
+            },
+            500: function() {
+                alert('A server-side error has occurred or service is temporarily unavailable');
+            },
+            404: function() {
+                alert('Could not contact server the server.');
+            }
+        },
+        timeout: 10000,
+        error: function(x, t, m) {
+            if(t==="timeout") {
+                alert("Oh noes, timeout error! Maybe due to sluggish Internet connection?");
+            } else {
+                alert(" This is embarrassing, some error occured :-(. Please try again in some time.");
+            }
         }
     });
 
@@ -52,8 +71,11 @@ function setConfigData(data) {
 
 function parseResults(data) {
 
+    // clear out the results area
+    $('section#feature_area').empty();
+    $('section.page_number_info').empty();
+
     if(data.results.length == 0){
-        $('section#feature_area').empty();
         $('section#feature_area').append("<article id='errorMsg'></article>");
         $('article#errorMsg').css('padding', '12px');
         $('article#errorMsg').html('Sorry, we didn\'t find any results matching your query.');
@@ -73,8 +95,6 @@ function parseResults(data) {
 
     var url = base_url + image_size;
 
-    // clear out the results area
-    $('section#feature_area').empty();
     for(var i = 0; i<data.results.length; i++) {
 
         var image = data.results[i].poster_path;

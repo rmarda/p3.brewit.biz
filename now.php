@@ -24,7 +24,8 @@
     </header>
     <nav class='menu'>
         <ul>
-            <li><a href ="index.php">Search Movie</a></li>
+            <li><a href ="index.php">Home</a></li>
+            <li><a href ="search.php">Search Movie</a></li>
             <li><a href ="now.php">Now Playing</a></li>
             <li><a href ="upcoming.php">Upcoming</a></li>
         </ul>
