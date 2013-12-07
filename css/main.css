@@ -295,13 +295,15 @@ div#top a{
     bottom:30px;
     right:30px;
     width:110px;
-    height:20px;
+    height:25px;
     background-color: rgba(94, 158, 46, 1);
     color:#fff;
     text-decoration: none;
     text-align: center;
     vertical-align:middle;
     visibility: hidden;
+    vertical-align: middle;
+    line-height:25px;
 }
 
 .page_number_info{
