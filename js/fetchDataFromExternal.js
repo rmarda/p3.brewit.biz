@@ -110,10 +110,10 @@ function parseResults(data) {
         var imgstr = '<img src="' + image_path + '" class=" clearfix movieImageStyle" />';
 
         var infostr = '<p class="movie_name">' + movie_name+ '</p>' +
-                      '<p>Release Date: '+release_date+'</p>' +
-                      '<p>Avg. Rating: '+ vote_average + '</p>' +
-                      '<p>Avg. Rating: '+ vote_average + '</p>' +
-                      '<p>Total no. of votes: '+vote_count+'</p>';
+                      '<p>Release Date: '+release_date+'<br>' +
+                      'Avg. Rating: '+ vote_average + '<br>' +
+                      'Avg. Rating: '+ vote_average + '<br>' +
+                      'Total no. of votes: '+vote_count+'</p>';
 
         var datastr = '<div class="clearfix movieInfoStyle">'+infostr+'</div>';
 
