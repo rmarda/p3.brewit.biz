@@ -49,7 +49,7 @@
 
                 <p>
                     The information displayed is being fetched from a third-party site: <a href="http://www.themoviedb.org/">The Movie Database.</a><br>
-                    <strong class="limitations">Limitations/Disclaimers:</strong>
+                    <strong class="importantNote">Limitations/Disclaimers:</strong>
                     Movie Database enforces the following rules on the search limit:<br>
                     30 requests every 10 seconds per IP. Maximum 20 simultaneous connections.<br>
                     For more information, please visit their website <a href="http://docs.themoviedb.apiary.io/">here.</a>

@@ -78,7 +78,7 @@ function parseResults(data) {
     if(data.results.length == 0){
         $('section#feature_area').append("<article id='errorMsg'></article>");
         $('article#errorMsg').css('padding', '12px');
-        $('article#errorMsg').html('Sorry, we didn\'t find any results matching your query.');
+        $('article#errorMsg').html('<p><strong class="importantNote">Sorry, we didn\'t find any results matching your query.<strong><p>');
         return;
     }
 
