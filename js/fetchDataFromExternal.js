@@ -123,8 +123,8 @@ function parseResults(data) {
     $('section.page_number_info').css('visibility', 'visible');
     window.currentPage = data.page;
     var pages = data.total_pages;
-    $('section.page_number_info').html('<span>Displaying results for: ' + window.currentSearch + '</span> ');
-    $('section.page_number_info').append('<span>Page: ' + window.currentPage + 'of '+ pages+'</span> ');
+    $('section.page_number_info').html('Displaying results for: <span class = "current_search">' + window.currentSearch + '</span> ');
+    $('section.page_number_info').append('<span class="page_link">Page: ' + window.currentPage + ' of '+ pages+'</span> ');
     if(currentPage>1){
         $('section.page_number_info').append('<a class="previous_page" href="#">previous </a> ||');
     }

@@ -115,6 +115,16 @@ p strong.limitations{
     color:#63a62f;
 }
 
+.current_search{
+    font-weight:900;
+    color:darkorange;
+}
+
+.page_link{
+    padding:10px;
+    text-align: right;
+}
+
 article#home_page_text a{
     text-decoration: none;
 }
